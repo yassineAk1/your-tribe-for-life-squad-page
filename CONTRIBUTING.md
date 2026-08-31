@@ -7,3 +7,11 @@
 4. 1 tab – voor indentation.  
 5. Gebruik dubbele quotes voor attributen.  
 6. Gebruik altijd Engels in naamgeving in code!  
+
+## regels
+1. Elkaar respectvol behandelen
+2. Op tijd komen
+3. Houden aan de afspraken
+4. Rekening houden met capaciteiten
+
+
