@@ -24,6 +24,7 @@
                 background: transparent;
                 padding-block: 0.5rem;
 
+                font-size: 1.2rem;
                 text-align: center;
                 text-transform: uppercase;
                 color: var(--color-primary);
