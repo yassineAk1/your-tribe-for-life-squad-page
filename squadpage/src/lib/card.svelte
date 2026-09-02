@@ -10,7 +10,6 @@
 </article>
 
 <style>
-
 a::after {
   content: '↗';
 }
