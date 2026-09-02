@@ -4,11 +4,9 @@
 
 
 <article>
-  <img src="https://i.imgur.com/o9fpo46_d.webp">
+  <img src="https://i.imgur.com/o9fpo46_d.webp" alt="Naam" >
   <a href="#">
-  <span>Naam</span>
-  <span>↗</span>
-</a>
+    <h2>Naam</h2>
 </article>
 
 <style>
