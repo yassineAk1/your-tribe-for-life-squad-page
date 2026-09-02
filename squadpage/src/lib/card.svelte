@@ -11,4 +11,7 @@
 
 <style>
 
+a::after {
+  content: '↗';
+}
 </style>
