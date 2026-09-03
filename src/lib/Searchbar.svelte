@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<form class="searchbar">
+<form class="searchbar" method="GET">
     <label>
         <input type="text" placeholder="Search" name="searchbar" />
     </label>
@@ -19,8 +19,7 @@
             justify-content: center;
 
             input {
-                border: none;
-                border-bottom: 1px solid var(--color-primary);
+                border: 1px solid var(--color-primary);
                 background: transparent;
                 padding-block: 0.5rem;
 
