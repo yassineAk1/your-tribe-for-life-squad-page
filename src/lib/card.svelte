@@ -1,12 +1,14 @@
 <script>
+  let { name, link, mugshot } = $props();
 </script>
 
 <article>
   <picture>
-    <img src="https://i.imgur.com/o9fpo46_d.webp" alt="Naam" />
+    <img src="https://fdnd.directus.app/assets/{mugshot}" alt="Naam" />
   </picture>
-  <a href="#">
-    <h2>Naam</h2>
+  <a href={link}>
+    <!-- <h2>{person.name}</h2> -->
+    <h2>{name}</h2>
     <svg
       width="10"
       height="10"

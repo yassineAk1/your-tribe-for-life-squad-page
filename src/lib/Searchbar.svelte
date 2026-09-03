@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<form class="searchbar" method="GET">
+<form class="searchbar" method="GET" action="/">
     <label>
-        <input type="text" placeholder="Search" name="searchbar" />
+        <input type="search" placeholder="Search" name="searchbar" />
     </label>
 </form>
 
