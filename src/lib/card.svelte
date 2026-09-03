@@ -1,12 +1,21 @@
 <script>
+  const { person } = $props();
+  function isImageUrl(url) {
+    if (!url) return false;
+    return url.match(/\.(webp|png|jpg|jpeg|gif)(\?.*)?$/i);
+  }
+
+  const avatar = isImageUrl(person.avatar)
+    ? person.avatar
+    : "https://i.pinimg.com/736x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg";
 </script>
 
 <article>
   <picture>
-    <img src="https://i.imgur.com/o9fpo46_d.webp" alt="Naam" />
+    <img src={avatar} alt={person.name} />
   </picture>
   <a href="#">
-    <h2>Naam</h2>
+    <h2>{person.name}</h2>
     <svg
       width="10"
       height="10"
@@ -50,6 +59,10 @@
       }
     }
 
+    h2 {
+      font-size: 0.9rem;
+      word-break: break-word;
+    }
     a {
       display: flex;
       color: white;
