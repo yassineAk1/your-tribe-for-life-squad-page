@@ -58,7 +58,7 @@
 
       @media (min-width: 1168px) {
         &:hover {
-          border: 3px ridge #a4a4a4;
+          border: 10px ridge var(--color-primary);
         }
       }
     }
