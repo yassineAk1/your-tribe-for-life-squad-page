@@ -15,7 +15,7 @@
 		squares.push({
 			left: randomBetween(0, 100),     
 			opacity: randomBetween(0.2, 0.9), 
-			duration: randomBetween(4, 10),   
+			duration: randomBetween(10, 14),   
 			delay: randomBetween(-10, 0)      
 		});
 	}
@@ -81,8 +81,8 @@
 
 	
 	@media (prefers-reduced-motion: reduce) {
-		.squares {
-			display: none;
+		.square {
+			animation-play-state: paused;
 		}
 	}
 </style>

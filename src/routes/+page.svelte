@@ -1,9 +1,9 @@
 <script>
     import Searchbar from "$lib/Searchbar.svelte";
+    import Card from "$lib/Card.svelte";
 
     const { data } = $props();
     let squad = data.squad[0];
-    console.log(squad);
 </script>
 
 <Searchbar />
