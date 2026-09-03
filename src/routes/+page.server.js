@@ -25,7 +25,6 @@ export async function load({ url, fetch }) {
         params.set('deep', JSON.stringify(deepObj));
     }
 
-    // const res = await fetch(`https://fdnd.directus.app/items/squad?filter[cohort][_eq]=2627&fields=cohort,name,persons.person_id.*${params.toString()}`)
     const res = await fetch(`https://fdnd.directus.app/items/squad?${params}`)
 
     if (!res.ok) {
@@ -44,11 +43,3 @@ export async function load({ url, fetch }) {
         isSearch
     }
 }
-
-
-// export async function load() {
-//     const res = await fetch('https://fdnd.directus.app/items/squad?filter[cohort][_eq]=2627&fields=cohort,name,persons.person_id.*')
-//     const data = await res.json()
-
-//     return { squad: data.data }
-// }

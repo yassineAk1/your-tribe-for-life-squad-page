@@ -15,7 +15,6 @@
 {/if}
 
 {#each squad.persons as person}
-    <p>{person.person_id.name}</p>
     <Card
         name={person.person_id.name}
         link={person.person_id.profilecard}
