@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Intel-One-Mono';
-    src: url('./lib/assets/IntelOneMono-VariableFont_wght.ttf') format('opentype');
+    src: url('../src/lib/assets/IntelOneMono-VariableFont_wght.ttf') format('opentype');
 }
 
 html {
