@@ -45,18 +45,19 @@
     overflow: hidden;
     flex-shrink: 0;
 
-    &:hover {
+    @media (min-width: 1168px) {
+      &:hover {
+        width: 500px;
+      }
     }
 
     img {
       width: 100%;
       aspect-ratio: 5/6;
       object-fit: cover;
-      transition: zoom 0.3s ease-out;
 
-      @media (any-pointer: fine) {
+      @media (min-width: 1168px) {
         &:hover {
-          zoom: 1.2;
           border: 3px ridge #a4a4a4;
         }
       }
