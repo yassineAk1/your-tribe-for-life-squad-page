@@ -26,3 +26,40 @@
 </article>
 
 <style>
+  svg {
+    stroke: #dfcfba;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 5/6;
+      object-fit: cover;
+      transition: zoom 0.3s ease-out;
+
+      @media (any-pointer: fine) {
+        &:hover {
+          zoom: 1.2;
+          border: 3px ridge #a4a4a4;
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      color: white;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0.7em;
+      text-decoration: none;
+      align-items: center;
+      border: solid white 1px;
+      padding-inline: 8px;
+    }
+  }
+</style>
