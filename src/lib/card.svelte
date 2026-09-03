@@ -41,6 +41,9 @@
   article {
     display: flex;
     flex-direction: column;
+    width: 268px;
+    overflow: hidden;
+    flex-shrink: 0;
 
     &:hover {
     }
