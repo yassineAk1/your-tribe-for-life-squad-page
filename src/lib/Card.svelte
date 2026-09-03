@@ -1,26 +1,29 @@
 <script>
-  let { name, link, mugshot } = $props();
-  const { person } = $props();
+  let { person } = $props();
+
+  const fallback =
+    "https://i.pinimg.com/736x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg";
+
+  // Niet elke avatar is een afbeelding, soms is het een link naar een pagina.
   function isImageUrl(url) {
     if (!url) return false;
     return url.match(/\.(webp|png|jpg|jpeg|gif)(\?.*)?$/i);
   }
 
-  const avatar = isImageUrl(person.avatar)
-    ? person.avatar
-    : "https://i.pinimg.com/736x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg";
+  // mugshot is een asset-id van Directus, avatar is een volledige url.
+  const image = person.mugshot
+    ? `https://fdnd.directus.app/assets/${person.mugshot}`
+    : isImageUrl(person.avatar)
+      ? person.avatar
+      : fallback;
 </script>
 
 <article>
   <picture>
-    <img src="https://fdnd.directus.app/assets/{mugshot}" alt="Naam" />
+    <img src={image} alt={person.name} />
   </picture>
-  <a href={link}>
-    <!-- <h2>{person.name}</h2> -->
-    <h2>{name}</h2>
-    <img src={avatar} alt={person.name} />
-  </picture>
-  <a href="#">
+  <!-- Niet iedereen heeft een profielkaart, dan blijft href weg. -->
+  <a href={person.profilecard}>
     <h2>{person.name}</h2>
     <svg
       width="10"
