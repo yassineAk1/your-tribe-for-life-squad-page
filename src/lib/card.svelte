@@ -1,4 +1,5 @@
 <script>
+  let { name, link, mugshot } = $props();
   const { person } = $props();
   function isImageUrl(url) {
     if (!url) return false;
@@ -12,6 +13,11 @@
 
 <article>
   <picture>
+    <img src="https://fdnd.directus.app/assets/{mugshot}" alt="Naam" />
+  </picture>
+  <a href={link}>
+    <!-- <h2>{person.name}</h2> -->
+    <h2>{name}</h2>
     <img src={avatar} alt={person.name} />
   </picture>
   <a href="#">
