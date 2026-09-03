@@ -8,6 +8,23 @@
   // carousel
   let carousel;
   let isDown = false;
+  let startX;
+  let scrollLeft;
+  let hasDragged = false;
+
+  function handleMouseDown(e) {
+    isDown = true;
+    hasDragged = false;
+    startX = e.pageX;
+    scrollLeft = carousel.scrollLeft;
+    e.preventDefault();
+  }
+
+  function handleMouseMove(e) {
+    if (!isDown) return;
+    const diff = e.pageX - startX;
+    if (Math.abs(diff) > 3) hasDragged = true;
+    carousel.scrollLeft = scrollLeft - diff;
   }
 
   function handleMouseUp() {
