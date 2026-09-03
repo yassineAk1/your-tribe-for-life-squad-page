@@ -1,30 +1,18 @@
 <script>
-  let { person } = $props();
-
-  const fallback =
-    "https://i.pinimg.com/736x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg";
-
-  // Niet elke avatar is een afbeelding, soms is het een link naar een pagina.
-  function isImageUrl(url) {
-    if (!url) return false;
-    return url.match(/\.(webp|png|jpg|jpeg|gif)(\?.*)?$/i);
-  }
-
-  // mugshot is een asset-id van Directus, avatar is een volledige url.
-  const image = person.mugshot
-    ? `https://fdnd.directus.app/assets/${person.mugshot}`
-    : isImageUrl(person.avatar)
-      ? person.avatar
-      : fallback;
+  let { name, link, img } = $props();
 </script>
 
 <article>
   <picture>
-    <img src={image} alt={person.name} />
+    <img
+      src="https://fdnd.directus.app/assets/{img}?format=webp"
+      loading="lazy"
+      alt={name}
+    />
   </picture>
   <!-- Niet iedereen heeft een profielkaart, dan blijft href weg. -->
-  <a href={person.profilecard}>
-    <h2>{person.name}</h2>
+  <a href={link}>
+    <h2>{name}</h2>
     <svg
       width="10"
       height="10"
@@ -50,10 +38,13 @@
   article {
     display: flex;
     flex-direction: column;
-    width: 268px;
+    width: 100%;
     overflow: hidden;
     flex-shrink: 0;
 
+    @media (min-width: 600px) {
+      width: 268px;
+    }
     @media (min-width: 1168px) {
       &:hover {
         width: 500px;
@@ -85,7 +76,7 @@
       text-decoration: none;
       align-items: center;
       border: solid white 1px;
-      padding-inline: 8px;
+      padding: 8px;
     }
   }
 </style>
