@@ -3,7 +3,7 @@
 
 <article>
   <picture>
-  <img src="https://i.imgur.com/o9fpo46_d.webp" alt="Naam" >
+    <img src="https://i.imgur.com/o9fpo46_d.webp" alt="Naam" />
   </picture>
   <a href="#">
     <h2>Naam</h2>
