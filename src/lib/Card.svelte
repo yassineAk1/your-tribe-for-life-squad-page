@@ -1,5 +1,7 @@
 <script>
-  let { name, link, img } = $props();
+
+  // Alleen deze drie namen bestaan hierbinnen, verder niets.
+  let { id, name, img } = $props();
 </script>
 
 <article>
@@ -10,8 +12,7 @@
       alt={name}
     />
   </picture>
-  <!-- Niet iedereen heeft een profielkaart, dan blijft href weg. -->
-  <a href={link}>
+  <a href="/person/{id}">
     <h2>{name}</h2>
     <svg
       width="10"
