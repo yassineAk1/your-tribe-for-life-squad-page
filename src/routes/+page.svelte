@@ -1,6 +1,7 @@
 <script>
     import Searchbar from "$lib/Searchbar.svelte";
     import Card from "$lib/Card.svelte";
+    import Themetoggle from "$lib/Themetoggle.svelte";
 
     let { data } = $props();
     //   let squad = $derived(data.squad?.[0]);
@@ -52,6 +53,7 @@
         <p class="results">Results for: "{data.query}"</p>
     {/if}
 
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <section
         class="carousel"
         class:dragging={isDown}
@@ -75,7 +77,10 @@
         {/each}
     </section>
 
-    <Searchbar />
+    <menu>
+        <Searchbar />
+        <Themetoggle />
+    </menu>
 </main>
 
 <style>
@@ -119,5 +124,14 @@
 
     .dragging {
         cursor: grabbing;
+    }
+
+    menu {
+        position: fixed;
+        bottom: 30px;
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
     }
 </style>

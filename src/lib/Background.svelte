@@ -1,6 +1,6 @@
 <script>
 	// Hoeveel vierkantjes er vallen.
-	const squareCount = 200;
+	const squareCount = 100;
 
 	// Geeft een willekeurig getal tussen min en max.
 	function randomBetween(min, max) {
@@ -13,10 +13,10 @@
 
 	for (let counter = 0; counter < squareCount; counter++) {
 		squares.push({
-			left: randomBetween(0, 100),     
-			opacity: randomBetween(0.2, 0.9), 
-			duration: randomBetween(10, 14),   
-			delay: randomBetween(-10, 0)      
+			left: randomBetween(0, 100),
+			opacity: randomBetween(0.2, 0.9),
+			duration: randomBetween(10, 14),
+			delay: randomBetween(-10, 0),
 		});
 	}
 </script>
@@ -38,7 +38,6 @@
 </div>
 
 <style>
-
 	.background {
 		position: fixed;
 		top: 0;
@@ -47,7 +46,7 @@
 		left: 0;
 		z-index: -1;
 		overflow: hidden;
-		background:  #000000;
+		background: var(--color-background);
 	}
 
 	.squares {
@@ -57,13 +56,12 @@
 		height: 100%;
 	}
 
-	
 	.square {
 		position: absolute;
 		top: -100px;
 		width: 10px;
 		height: 10px;
-		background-color: #ffffff;
+		background-color: var(--color-primary);
 
 		animation-name: fall;
 		animation-timing-function: linear;
@@ -79,7 +77,6 @@
 		}
 	}
 
-	
 	@media (prefers-reduced-motion: reduce) {
 		.square {
 			animation-play-state: paused;

@@ -23,7 +23,7 @@
     >
       <path
         d="M1.00001 14.6699L14.3914 1.27857M14.6704 13.275L14.3914 1.27857L2.39494 0.999588"
-        stroke="white"
+        // stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -34,8 +34,9 @@
 
 <style>
   svg {
-    stroke: #dfcfba;
+    stroke: var(--color-primary);
   }
+
   article {
     display: flex;
     flex-direction: column;
@@ -56,12 +57,6 @@
       width: 100%;
       aspect-ratio: 5/6;
       object-fit: cover;
-
-      @media (min-width: 1168px) {
-        &:hover {
-          border: 10px ridge var(--color-primary);
-        }
-      }
     }
 
     h2 {
@@ -70,13 +65,13 @@
     }
     a {
       display: flex;
-      color: white;
+      color: var(--color-primary);
       flex-direction: row;
       justify-content: space-between;
       gap: 0.7em;
       text-decoration: none;
       align-items: center;
-      border: solid white 1px;
+      border: solid var(--color-primary) 1px;
       padding: 8px;
     }
   }
