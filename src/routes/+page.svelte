@@ -69,7 +69,7 @@
             <Card
                 name={person.person_id.name}
                 img={person.person_id.mugshot}
-                link={person.person_id.profilecard}
+                id={person.person_id.id}
             />
             <!-- <p class="empty">Geen teamgenoten gevonden.</p> -->
         {/each}
