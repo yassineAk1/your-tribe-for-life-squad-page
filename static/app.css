@@ -15,10 +15,31 @@ html {
         @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
     }
+
+    color-scheme: dark light;
 }
 
+h1,h2,h3,h4 {
+    font-weight: 400;
+}
+
+
 :root {
-    --color-primary: #ffffff;
+    --color-primary: #199db7;
+    --color-background: #fdfdfd;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #fff;
+        --color-background: #000;
+    }
+}
+
+html:has(#theme-toggle:checked) {
+    color-scheme: dark;
+    --color-primary: #fff;
+    --color-background: #000;
 }
 
 body {
