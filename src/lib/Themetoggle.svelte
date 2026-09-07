@@ -1,7 +1,4 @@
 <script>
-    // const themeToggle = document.querySelector("button");
-
-    // themeToggle.addEventListener("click", () => {});
 </script>
 
 <form action="#">

@@ -131,7 +131,7 @@
         bottom: 30px;
         width: 100%;
         display: flex;
-        gap: 1rem;
+        gap: 8px;
         justify-content: center;
     }
 </style>
