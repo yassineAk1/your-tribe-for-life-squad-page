@@ -66,11 +66,13 @@
     onwheel={handleWheel}
   >
     {#each squad.persons as person}
-      <Card
-        name={person.person_id.name}
-        img={person.person_id.mugshot}
-        id={person.person_id.id}
-      />
+      {#if person.person_id}
+        <Card
+          name={person.person_id.name}
+          img={person.person_id.mugshot}
+          id={person.person_id.id}
+        />
+      {/if}
     {/each}
   </section>
 
