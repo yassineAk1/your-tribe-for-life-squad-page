@@ -47,6 +47,7 @@
 		z-index: -1;
 		overflow: hidden;
 		background: var(--color-background);
+		transition: all var(--animation-duration) ease;
 	}
 
 	.squares {
@@ -63,6 +64,7 @@
 		height: 10px;
 		background-color: var(--color-primary);
 
+		transition: all var(--animation-duration) ease;
 		animation-name: fall;
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;

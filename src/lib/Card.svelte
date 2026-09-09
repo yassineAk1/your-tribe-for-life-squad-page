@@ -1,5 +1,4 @@
 <script>
-
   // Alleen deze drie namen bestaan hierbinnen, verder niets.
   let { id, name, img } = $props();
 </script>
@@ -43,13 +42,15 @@
     width: 100%;
     overflow: hidden;
     flex-shrink: 0;
+    transition: all var(--animation-duration) ease;
 
     @media (min-width: 600px) {
       width: 268px;
     }
     @media (min-width: 1168px) {
       &:hover {
-        width: 500px;
+        width: 350px;
+        transition: all var(--animation-duration) ease;
       }
     }
 

@@ -23,7 +23,7 @@
             width: 1em;
             aspect-ratio: 1/1;
             background-color: var(--color-primary);
-            transition: all 0.25s ease;
+            transition: all var(--animation-duration) ease;
             margin-inline: 0.25rem;
             transform: translateY(-20%);
         }
