@@ -1,6 +1,8 @@
 <script>
 	let { data } = $props()
 	let person = $derived(data.person)
+	import { imagesrc } from "$lib/imagesrc.js"
+	import handleError from "$lib/Card.svelte"
 </script>
 
 	<h1>{person.name}</h1>
@@ -10,7 +12,7 @@
 
 	<article>
 		<img
-			src="{person.avatar}"
+			src="{imagesrc(person.avatar, person.mugshot)}"
 			alt="foto van {person.name}"
 		/>
 
