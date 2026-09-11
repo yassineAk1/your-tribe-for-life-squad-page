@@ -1,14 +1,26 @@
 <script>
+  import { imagesrc } from "$lib/imagesrc.js";
+
   // Alleen deze drie namen bestaan hierbinnen, verder niets.
-  let { id, name, img } = $props();
+  let { id, name, avatar, mugshot } = $props();
+   let src = $derived(imagesrc(avatar, mugshot));
+     // De browser kreeg deze afbeelding niet geladen → schuif een stap op.
+  function handleError() {
+    if (src === avatar) {
+      src = imagesrc(null, mugshot);  // avatar overslaan → mugshot
+    } else {
+      src = imagesrc(null, null);     // mugshot ook stuk → placeholder
+    }
+  }
 </script>
 
 <article>
   <picture>
     <img
-      src="https://fdnd.directus.app/assets/{img}?format=webp"
+      src={src}
       loading="lazy"
-      alt={name}
+      alt= "foto van {name}"
+      onerror={handleError}
     />
   </picture>
   <a href="/person/{id}">
