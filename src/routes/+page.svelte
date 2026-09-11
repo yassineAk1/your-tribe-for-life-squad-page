@@ -69,8 +69,9 @@
       {#if person.person_id}
         <Card
           name={person.person_id.name}
-          img={person.person_id.mugshot}
-          id={person.person_id.id}
+                avatar={person.person_id.avatar}
+                mugshot={person.person_id.mugshot}
+                id={person.person_id.id}
         />
       {/if}
     {/each}

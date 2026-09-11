@@ -10,7 +10,7 @@
 
 	<article>
 		<img
-			src="https://fdnd.directus.app/assets/{person.mugshot}?format=webp"
+			src="{person.avatar}"
 			alt="foto van {person.name}"
 		/>
 
