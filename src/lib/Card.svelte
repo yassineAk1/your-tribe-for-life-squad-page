@@ -17,10 +17,11 @@
       loading="lazy"
       alt= "foto van {name}"
       onerror={handleError}
+      style="view-transition-name: person-img-{id}"
     />
   </picture>
   <a href="/person/{id}">
-    <h2>{name}</h2>
+    <h2 style="view-transition-name: person-name-{id}">{name}</h2>
     <svg
       width="10"
       height="10"
