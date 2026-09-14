@@ -1,4 +1,4 @@
-import placeholder from "/assets/placeholder.jpg";
+import placeholder from "$lib/assets/placeholder.jpg";
 
 export function imagesrc(avatar, mugshot) {
 	if (avatar) {
@@ -10,4 +10,12 @@ export function imagesrc(avatar, mugshot) {
 	}
 
 	return placeholder;
+}
+
+export function fallbacksrc(src, avatar, mugshot) {
+	if (src === avatar) {
+		return imagesrc(null, mugshot); 
+	}
+
+	return imagesrc(null, null); 
 }

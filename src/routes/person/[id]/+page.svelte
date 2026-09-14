@@ -1,19 +1,23 @@
 <script>
+	import { imagesrc, fallbacksrc } from "$lib/imagesrc.js"
+
 	let { data } = $props()
 	let person = $derived(data.person)
-	import { imagesrc } from "$lib/imagesrc.js"
-	import handleError from "$lib/Card.svelte"
-</script>
+	let src = $derived(imagesrc(person.avatar, person.mugshot))
 
-	<h1>{person.name}</h1>
+	function handleError() {
+		src = fallbacksrc(src, person.avatar, person.mugshot)
+	}
+</script>
 
 <main>
 	<a class="back" href="/">Terug</a>
 
 	<article>
 		<img
-			src="{imagesrc(person.avatar, person.mugshot)}"
+			src={src}
 			alt="foto van {person.name}"
+			onerror={handleError}
 		/>
 
 		<h1>{person.name}</h1>
