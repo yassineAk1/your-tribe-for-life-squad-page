@@ -1,16 +1,12 @@
 <script>
-  import { imagesrc } from "$lib/imagesrc.js";
+  import { imagesrc, fallbacksrc } from "$lib/imagesrc.js";
 
   // Alleen deze drie namen bestaan hierbinnen, verder niets.
   let { id, name, avatar, mugshot } = $props();
-   let src = $derived(imagesrc(avatar, mugshot));
-     // De browser kreeg deze afbeelding niet geladen → schuif een stap op.
+  let src = $derived(imagesrc(avatar, mugshot));
+
   function handleError() {
-    if (src === avatar) {
-      src = imagesrc(null, mugshot);  // avatar overslaan → mugshot
-    } else {
-      src = imagesrc(null, null);     // mugshot ook stuk → placeholder
-    }
+    src = fallbacksrc(src, avatar, mugshot);
   }
 </script>
 
