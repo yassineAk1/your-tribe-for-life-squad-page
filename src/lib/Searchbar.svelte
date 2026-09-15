@@ -56,11 +56,6 @@
                     "Helvetica Neue",
                     sans-serif;
                 color: var(--color-primary);
-                /* width: 30%; */
-
-                @supports (width: clamp(8rem, 40%, 18rem)) {
-                    /* width: clamp(8rem, 40%, 18rem); */
-                }
 
                 &::placeholder {
                     color: var(--color-primary);
