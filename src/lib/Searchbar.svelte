@@ -27,17 +27,19 @@
 
 <style>
     form {
+        border: 1px solid var(--color-primary);
+        width: clamp(8rem, 40%, 18rem);
+
         label {
-            width: min-content;
-            border: 1px solid var(--color-primary);
-            display: grid;
-            grid-template-columns: 1fr max-content;
             padding-inline: 8px;
+            display: grid;
+            grid-template-columns: 1fr min-content;
 
             input {
                 background: transparent;
                 padding-block: 0.5rem;
                 border: none;
+                width: 100%;
 
                 font-size: 1.2rem;
                 font-family:
@@ -54,8 +56,6 @@
                     "Helvetica Neue",
                     sans-serif;
                 color: var(--color-primary);
-
-                width: clamp(8rem, 40%, 18rem);
 
                 &::placeholder {
                     color: var(--color-primary);

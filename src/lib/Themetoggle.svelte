@@ -45,7 +45,6 @@
     input {
         appearance: none;
         height: 100%;
-        /* aspect-ratio: 2/1; */
         background-color: transparent;
         border: 1px solid var(--color-primary);
         cursor: pointer;
