@@ -53,4 +53,5 @@ html:has(#theme-toggle:checked) {
 body {
     background-color: black;
     color: var(--color-primary);
+    overflow-x: hidden;
 }
