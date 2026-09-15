@@ -33,10 +33,6 @@ export async function load({ url, fetch }) {
 
     const personResponseJSON = await res.json()
 
-    const fullUrl = `https://fdnd.directus.app/items/squad?${params}`
-    console.log('full link:', fullUrl)
-    console.log('data.length:', personResponseJSON.data?.length ?? 'undefined');
-
     return {
         query: searchbar,
         squad: personResponseJSON.data,
