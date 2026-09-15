@@ -38,6 +38,12 @@ h1,h2,h3,h4 {
     }
 }
 
+html:has(#theme-toggle:not(:checked)) {
+    color-scheme: light;
+    --color-primary: #199db7;
+    --color-background: #fdfdfd;
+}
+
 html:has(#theme-toggle:checked) {
     color-scheme: dark;
     --color-primary: #fff;
