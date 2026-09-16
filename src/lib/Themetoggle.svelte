@@ -1,10 +1,7 @@
 <script>
-    import { onMount } from "svelte";
-
     let isDark = $state(false);
 
-    // komt van AI https://www.perplexity.ai/search/5edf6c63-76f4-4974-aeb1-e61e8007ce44
-    onMount(() => {
+    $effect(() => {
         const colorThemeDark = window.matchMedia(
             "(prefers-color-scheme: dark)",
         );
