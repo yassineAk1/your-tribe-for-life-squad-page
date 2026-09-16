@@ -93,9 +93,12 @@
 		width: 100%;
 		max-width: 22rem;
 		padding: 0.75rem;
-		background: var(--color-primary);
+		/* background: var(--color-primary); */
 		color: var(--color-background);
 		text-transform: uppercase;
+		border: solid var(--color-primary) 1px;
+		color: var(--color-primary);
+		backdrop-filter: blur(10px);
 
 		@media (min-width: 576px) {
 			max-width: 36rem;
@@ -124,6 +127,8 @@
 	.button,
 	dl > div {
 		border: 1px solid var(--color-background);
+				border: solid var(--color-primary) 1px;
+		color: var(--color-primary);
 	}
 
 	.back {
@@ -136,6 +141,7 @@
 		font-size: 1rem;
 		opacity: 0.6;
 		transition: opacity var(--animation-duration) ease;
+		
 
 		&:hover,
 		&:focus-visible {

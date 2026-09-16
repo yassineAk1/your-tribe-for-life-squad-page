@@ -52,6 +52,7 @@
     overflow: hidden;
     flex-shrink: 0;
     transition: all var(--animation-duration) ease;
+    backdrop-filter: blur(10px);
 
     @media (min-width: 600px) {
       width: 268px;

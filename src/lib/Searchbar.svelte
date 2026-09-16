@@ -29,6 +29,7 @@
     form {
         border: 1px solid var(--color-primary);
         width: clamp(8rem, 40%, 18rem);
+        	backdrop-filter: blur(10px);
 
         label {
             padding-inline: 8px;
@@ -40,6 +41,7 @@
                 padding-block: 0.5rem;
                 border: none;
                 width: 100%;
+                backdrop-filter: blur(10px);
 
                 font-size: 1.2rem;
                 font-family:
