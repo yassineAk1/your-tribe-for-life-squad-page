@@ -34,9 +34,9 @@
 			<h1 style="view-transition-name: person-name-{person.id}">{person.name}</h1>
 
 			<div class="meta">
-				{#if person.github_handle}
-					<a class="handle" href="https://github.com/{person.github_handle}">@{person.github_handle}</a>
-				{/if}
+		
+					<p class="handle">@{person.github_handle}</p>
+				
 
 				{#if person.profilecard}
 					<a class="button" href={person.profilecard}>
@@ -50,6 +50,17 @@
 							/>
 						</svg>
 					</a>
+					{:else if person.github_handle}
+					<a class="button" href="https://github.com/{person.github_handle}">Github		<svg width="8" height="8" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+							<path
+								d="M1.00001 14.6699L14.3914 1.27857M14.6704 13.275L14.3914 1.27857L2.39494 0.999588"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</a>
+			
 				{/if}
 			</div>
 
@@ -76,17 +87,14 @@
 	}
 
 	article {
-		--card-bg: var(--color-primary);
-		--card-fg: var(--color-background);
-
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 0.75rem;
 		width: 100%;
 		max-width: 22rem;
 		padding: 0.75rem;
-		background: var(--card-bg);
-		color: var(--card-fg);
+		background: var(--color-primary);
+		color: var(--color-background);
 		text-transform: uppercase;
 
 		@media (min-width: 576px) {
@@ -94,21 +102,28 @@
 			grid-template-columns: 11rem 1fr;
 			grid-template-rows: auto 1fr;
 		}
+
+		@media (min-width: 1024px) {
+			max-width: 60rem;
+			grid-template-columns: 20rem 1fr;
+			gap: 1.25rem;
+			padding: 1.25rem;
+		}
 	}
 
 	svg {
-		stroke: var(--card-fg);
+		stroke: var(--color-background);
 	}
 
 	a {
-		color: var(--card-fg);
+		color: var(--color-background);
 		text-decoration: none;
 	}
 
 	.back,
 	.button,
 	dl > div {
-		border: 1px solid var(--card-fg);
+		border: 1px solid var(--color-background);
 	}
 
 	.back {
@@ -118,7 +133,7 @@
 		align-items: center;
 		gap: 0.25rem;
 		padding: 0.25rem 0.35rem;
-		font-size: 0.6rem;
+		font-size: 1rem;
 		opacity: 0.6;
 		transition: opacity var(--animation-duration) ease;
 
@@ -132,7 +147,7 @@
 		width: 100%;
 		aspect-ratio: 5 / 6;
 		object-fit: cover;
-		border: 1px solid var(--card-fg);
+		border: 1px solid var(--color-background);
 	}
 
 	.info {
@@ -143,13 +158,16 @@
 	}
 
 	h1 {
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 		letter-spacing: 0.05em;
 		padding: 0.75rem 0 0 0.5rem;
-		word-break: break-word;
 
 		@media (min-width: 576px) {
 			margin-bottom: auto;
+		}
+
+		@media (min-width: 1024px) {
+			font-size: 2rem;
 		}
 	}
 
@@ -159,16 +177,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 0.5rem;
-		font-size: 0.65rem;
-	}
-
-	.handle {
-		padding-left: 0.5rem;
-
-		&:hover,
-		&:focus-visible {
-			text-decoration: underline;
-		}
+		font-size: 1rem;
 	}
 
 	.button {
@@ -180,11 +189,11 @@
 
 		&:hover,
 		&:focus-visible {
-			background: var(--card-fg);
-			color: var(--card-bg);
+			background: var(--color-background);
+			color: var(--color-primary);
 
 			svg {
-				stroke: var(--card-bg);
+				stroke: var(--color-primary);
 			}
 		}
 	}
@@ -193,7 +202,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		font-size: 0.65rem;
 
 		> div {
 			display: flex;
