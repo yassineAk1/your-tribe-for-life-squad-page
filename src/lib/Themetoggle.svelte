@@ -1,15 +1,50 @@
 <script>
+    import { onMount } from "svelte";
+
+    let isDark = $state(false);
+
+    // komt van AI https://www.perplexity.ai/search/5edf6c63-76f4-4974-aeb1-e61e8007ce44
+    onMount(() => {
+        const colorThemeDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+        );
+
+        const update = (e) => {
+            isDark = e.matches;
+        };
+
+        update(colorThemeDark);
+        colorThemeDark.addEventListener("change", update);
+
+        return () => colorThemeDark.removeEventListener("change", update);
+    });
 </script>
 
 <form action="#">
-    <input type="checkbox" switch id="theme-toggle" />
+    <label for="theme-toggle" class="visuallyhidden">Toggle color theme </label>
+    <input
+        type="checkbox"
+        switch
+        id="theme-toggle"
+        name="theme-toggle"
+        checked={isDark}
+    />
 </form>
 
 <style>
+    .visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
     input {
         appearance: none;
         height: 100%;
-        /* aspect-ratio: 2/1; */
         background-color: transparent;
         border: 1px solid var(--color-primary);
         cursor: pointer;

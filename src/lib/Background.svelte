@@ -73,10 +73,10 @@
 
 	@keyframes fall {
 		from {
-			transform: translateY(0);
+			transform: translateY(0) rotate(0);
 		}
 		to {
-			transform: translateY(calc(100vh + 200px));
+			transform: translateY(calc(100vh + 200px)) rotate(360deg);
 		}
 	}
 
