@@ -1,7 +1,8 @@
 <script>
 	// Hoeveel vierkantjes er vallen.
 	const squareCount = 100;
-
+	// props om aan de background nmee te geven voor het veranderen van kleur 
+    let {color} = $props();
 	// Geeft een willekeurig getal tussen min en max.
 	function randomBetween(min, max) {
 		return min + Math.random() * (max - min);
@@ -22,7 +23,7 @@
 </script>
 
 <div class="background">
-	<div class="squares">
+<div class="squares" style:--square-color={color || null}>
 		{#each squares as square}
 			<span
 				class="square"
@@ -62,7 +63,7 @@
 		top: -100px;
 		width: 10px;
 		height: 10px;
-		background-color: var(--color-primary);
+		background-color: var(--square-color, var(--color-primary));
 
 		transition: all var(--animation-duration) ease;
 		animation-name: fall;
