@@ -70,7 +70,7 @@
     }
 
     h2 {
-      font-size: 0.9rem;
+      font-size: 1rem;
       word-break: break-word;
     }
     a {
