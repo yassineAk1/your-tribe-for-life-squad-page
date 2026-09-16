@@ -1,16 +1,12 @@
 <script>
-  import { imagesrc } from "$lib/imagesrc.js";
+  import { imagesrc, fallbacksrc } from "$lib/imagesrc.js";
 
   // Alleen deze drie namen bestaan hierbinnen, verder niets.
   let { id, name, avatar, mugshot } = $props();
-   let src = $derived(imagesrc(avatar, mugshot));
-     // De browser kreeg deze afbeelding niet geladen → schuif een stap op.
+  let src = $derived(imagesrc(avatar, mugshot));
+
   function handleError() {
-    if (src === avatar) {
-      src = imagesrc(null, mugshot);  // avatar overslaan → mugshot
-    } else {
-      src = imagesrc(null, null);     // mugshot ook stuk → placeholder
-    }
+    src = fallbacksrc(src, avatar, mugshot);
   }
 </script>
 
@@ -21,10 +17,11 @@
       loading="lazy"
       alt= "foto van {name}"
       onerror={handleError}
+      style="view-transition-name: person-img-{id}"
     />
   </picture>
   <a href="/person/{id}">
-    <h2>{name}</h2>
+    <h2 style="view-transition-name: person-name-{id}">{name}</h2>
     <svg
       width="10"
       height="10"
@@ -55,6 +52,7 @@
     overflow: hidden;
     flex-shrink: 0;
     transition: all var(--animation-duration) ease;
+    backdrop-filter: blur(10px);
 
     @media (min-width: 600px) {
       width: 268px;
@@ -73,7 +71,7 @@
     }
 
     h2 {
-      font-size: 0.9rem;
+      font-size: 1rem;
       word-break: break-word;
     }
     a {
